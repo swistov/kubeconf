@@ -120,7 +120,7 @@ class KubeConf(Configurable):
         """Read the kube config file. 
         """
         stream = self.path.read_text()
-        data = yaml.load(stream)
+        data = yaml.full_load(stream)
         return data
 
     def _write(self, data):
